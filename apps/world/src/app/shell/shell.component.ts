@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <atrius-app-bar>
       <atrius-app-bar-section>
-        <atrius-app-bar-title>Three Sixty</atrius-app-bar-title>
+        <atrius-app-bar-title>Uclidian</atrius-app-bar-title>
       </atrius-app-bar-section>
     </atrius-app-bar>
 
