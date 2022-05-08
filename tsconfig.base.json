@@ -16,7 +16,8 @@
     "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
-      "@atrius/ui/*": ["libs/ui/src/lib/*"],
+      "@world/*": ["apps/world/src/app/*", "apps/world/src/*"],
+      "@atrius/ui/*": ["libs/ui/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
