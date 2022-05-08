@@ -1,0 +1,10 @@
+$menu-item-height: 36px;
+
+:host {
+  display: block;
+}
+
+.action-menu-item {
+  height: $menu-item-height;
+  line-height: $menu-item-height;
+}

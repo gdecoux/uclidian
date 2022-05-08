@@ -1,0 +1,5 @@
+@use '../app-bar/app-bar-theme';
+
+@mixin atrius-component-typographies($typography-config) {
+  @include app-bar-theme.typography($typography-config);
+}

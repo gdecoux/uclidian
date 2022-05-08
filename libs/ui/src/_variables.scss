@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+// prettier-ignore
+$atrius-icon-size: (
+  small:   18px,
+  normal:  24px,  /* Material preferred icon size */
+  medium:  36px,
+  large:   48px,
+  xlarge:  72px,
+);
+
+$atrius-avatar-size: (
+  small: 24px,
+  normal: 36px,
+);
+
+$atrius-avatar-color: (
+  dark: map.get(mat.$blue-grey-palette, 700),
+  light: map.get(mat.$blue-grey-palette, 100),
+);
+
+$atrius-status-color: (
+  info: map.get(mat.$blue-palette, 500),
+  success: map.get(mat.$green-palette, 500),
+  warning: map.get(mat.$amber-palette, A400),
+  error: map.get(mat.$red-palette, 500),
+);

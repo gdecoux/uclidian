@@ -1,0 +1,9 @@
+@use '../action/action-theme';
+@use '../app-bar/app-bar-theme';
+@use '../avatar/avatar-theme';
+
+@mixin atrius-component-themes($theme) {
+  @include action-theme.theme($theme);
+  @include app-bar-theme.theme($theme);
+  @include avatar-theme.theme($theme);
+}

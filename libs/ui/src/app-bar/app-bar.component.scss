@@ -1,0 +1,34 @@
+$app-bar-height: 48px !default;
+$app-bar-padding: 0 16px !default;
+$app-bar-title-left-padding: 16px !default;
+
+:host {
+  display: block;
+}
+
+.atrius-app-bar {
+  display: flex;
+  height: $app-bar-height;
+  padding: $app-bar-padding;
+  width: 100%;
+  flex-wrap: 0;
+  white-space: nowrap;
+}
+
+.atrius-app-bar-section {
+  display: inline-flex;
+  align-items: center;
+
+  &.align-start {
+    justify-content: flex-start;
+    flex: 1 1 auto;
+  }
+
+  &.align-end {
+    justify-content: flex-end;
+  }
+}
+
+.atrius-app-bar-title {
+  padding-left: $app-bar-title-left-padding;
+}

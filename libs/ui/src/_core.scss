@@ -1,0 +1,34 @@
+@use 'sass:list';
+@use '@angular/material' as mat;
+
+@use 'theming/all-theme';
+@use 'theming/body-theme';
+@use 'theming/mat-overrides';
+
+@use 'typography/all-typography';
+
+$atrius-typography-config: mat.define-typography-config(
+  $title: mat.define-typography-level(20px, 32px, 400),
+);
+
+@mixin core($typography-config: $atrius-typography-config) {
+  @include all-typography.atrius-component-typographies($typography-config);
+}
+
+@mixin typography($typography-config: $atrius-typography-config) {
+  $font-family: mat.font-family($typography-config, body-1);
+  $font-weight: mat.font-weight($typography-config, body-1);
+  $font-size: mat.font-size($typography-config, body-1);
+
+  font: $font-weight list.slash($font-size, 1) $font-family;
+}
+
+/* must be applied to body */
+@mixin theme($theme) {
+  @include mat.all-component-themes($theme);
+  @include body-theme.theme($theme);
+  @include all-theme.atrius-component-themes($theme);
+  @include mat-overrides.mat-overrides();
+
+  @include typography($atrius-typography-config);
+}

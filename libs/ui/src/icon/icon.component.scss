@@ -1,0 +1,23 @@
+@use '../variables';
+
+:host {
+  display: inline-block;
+  vertical-align: middle;
+
+  mat-icon {
+    display: block;
+  }
+}
+
+@mixin icon-size($size: 24px) {
+  width: $size;
+  height: $size;
+  font-size: $size;
+  line-height: $size;
+}
+
+@each $key, $size in variables.$atrius-icon-size {
+  .#{$key} {
+    @include icon-size($size);
+  }
+}

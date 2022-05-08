@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@mixin color($theme) {
+  $config: mat.get-color-config($theme);
+  $background: map.get($config, background);
+  $foreground: map.get($config, foreground);
+
+  background: map.get($background, background);
+  color: map.get($foreground, text);
+}
+
+@mixin theme($theme) {
+  * {
+    box-sizing: border-box;
+  }
+
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

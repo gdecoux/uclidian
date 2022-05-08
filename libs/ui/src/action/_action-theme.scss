@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($config) {
+  $foreground: map.get($config, foreground);
+
+  .action-divider {
+    border-bottom: 1px solid map.get($foreground, divider);
+    margin: 8px 0;
+  }
+}
+
+@mixin theme($theme) {
+  $color: mat.get-color-config($theme);
+
+  @if $color != null {
+    @include color($color);
+  }
+}

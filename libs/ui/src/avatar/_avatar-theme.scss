@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../variables';
+
+@mixin color($config) {
+  $is-dark: map.get($config, 'is-dark');
+
+  .avatar {
+    @if $is-dark {
+      background-color: map.get(variables.$atrius-avatar-color, dark);
+    } @else {
+      background-color: map.get(variables.$atrius-avatar-color, light);
+    }
+  }
+}
+
+@mixin theme($theme) {
+  $color: mat.get-color-config($theme);
+
+  @if $color != null {
+    @include color($color);
+  }
+}

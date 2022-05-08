@@ -1,0 +1,32 @@
+@use 'sass:math';
+@use '../variables';
+
+:host {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin avatar-size($size) {
+  width: $size;
+  height: $size;
+  font-size: math.div($size, 2);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: #38536d;
+
+  &.round {
+    border-radius: 50%;
+  }
+}
+
+.avatar {
+  @each $key, $value in variables.$atrius-avatar-size {
+    &.#{$key} {
+      @include avatar-size($value);
+    }
+  }
+}

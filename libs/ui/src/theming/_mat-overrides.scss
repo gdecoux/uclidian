@@ -1,0 +1,61 @@
+@use "sass:math";
+@use '../variables';
+
+@mixin mat-overrides() {
+  $button-height: 36px !default;
+
+  $compact-button-height: 24px !default;
+  $compact-button-padding: 0 8px !default;
+
+  .mat-button,
+  .mat-stroked-button,
+  .mat-flat-button,
+  .mat-raised-button {
+    height: $button-height;
+    border-radius: math.div($button-height, 2);
+
+    &.compact {
+      height: $compact-button-height;
+      padding: $compact-button-padding;
+    }
+  }
+
+  .mat-icon-button {
+    &.compact {
+      width: $compact-button-height;
+      height: $compact-button-height;
+    }
+  }
+
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button,
+  .mat-flat-button,
+  .mat-icon-button {
+    .mat-button-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: inherit;
+    vertical-align: middle;
+  }
+
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button,
+  .mat-flat-button {
+    atrius-icon {
+      margin-right: 4px;
+    }
+  }
+
+  .mat-menu-panel {
+    min-height: 0;
+  }
+}

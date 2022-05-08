@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($config) {
+  $background: map.get($config, background);
+  $foreground: map.get($config, foreground);
+
+  .atrius-app-bar {
+    background: mat.get-color-from-palette($background, app-bar);
+    color: mat.get-color-from-palette($foreground, text);
+  }
+}
+
+@mixin typography($config) {
+  .atrius-app-bar-title {
+    @include mat.typography-level($config, title);
+    margin: 0;
+  }
+}
+
+@mixin theme($theme) {
+  $color: mat.get-color-config($theme);
+  $typography: mat.get-typography-config($theme);
+
+  @if $color != null {
+    @include color($color);
+  }
+
+  @if $typography != null {
+    @include typography($typography);
+  }
+}

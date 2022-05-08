@@ -13,8 +13,11 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@atrius/ui/*": ["libs/ui/src/lib/*"],
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
