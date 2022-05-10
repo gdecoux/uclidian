@@ -14,10 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "strictPropertyInitialization": false,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "@world/*": ["apps/world/src/app/*", "apps/world/src/*"],
-      "@atrius/ui/*": ["libs/ui/src/*"]
+      "@atrius/mgl": ["libs/mgl/src/index.ts"],
+      "@atrius/ui/*": ["libs/ui/src/*"],
+      "@world/*": ["apps/world/src/app/*", "apps/world/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

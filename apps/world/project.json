@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/world",
   "sourceRoot": "apps/world/src",
   "prefix": "atrius",
   "targets": {
@@ -15,7 +14,7 @@
         "tsConfig": "apps/world/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/world/src/favicon.ico", "apps/world/src/assets"],
-        "styles": ["apps/world/src/styles.scss"],
+        "styles": ["apps/world/src/styles.scss", "node_modules/mapbox-gl/dist/mapbox-gl.css"],
         "scripts": [],
         "stylePreprocessorOptions": {
           "includePaths": ["libs"]

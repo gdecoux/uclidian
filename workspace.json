@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "mgl": "libs/mgl",
     "ui": "libs/ui",
     "world": "apps/world"
   }

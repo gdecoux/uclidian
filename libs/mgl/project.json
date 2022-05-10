@@ -1,12 +1,12 @@
 {
   "projectType": "library",
-  "sourceRoot": "libs/ui/src",
-  "prefix": "atrius",
+  "sourceRoot": "libs/mgl/src",
+  "prefix": "mgl",
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["libs/ui/**/*.ts", "libs/ui/**/*.html"]
+        "lintFilePatterns": ["libs/mgl/**/*.ts", "libs/mgl/**/*.html"]
       }
     }
   },
