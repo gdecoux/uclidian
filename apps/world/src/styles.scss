@@ -1,6 +1,8 @@
 @use '@angular/material' as mat;
 @use 'ui';
 
+@use 'app/map-page/map-page-theme';
+
 @include mat.core(ui.$atrius-typography-config);
 @include ui.core();
 
@@ -10,8 +12,13 @@ $warn: mat.define-palette(mat.$red-palette);
 
 $theme: mat.define-dark-theme($primary, $accent, $warn);
 
+@mixin app-theme($theme) {
+  @include map-page-theme.theme($theme);
+}
+
 .theme {
   @include ui.theme($theme);
+  @include app-theme($theme);
 }
 
 html,

@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.drawer {
+  width: 300px;
+  overflow: visible;
+  visibility: visible !important;
+  display: block !important;
+}
+
+.drawer-handle {
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  height: 48px;
+  width: 24px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  left: 100%;
+}

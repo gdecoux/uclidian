@@ -270,6 +270,15 @@ export class MglMap implements OnInit, OnChanges, OnDestroy {
     return this.map.queryRenderedFeatures(pointOrBox, options);
   }
 
+  querySourceFeatures(
+    id: string,
+    parameters?:
+      | ({ sourceLayer?: string | undefined; filter?: any[] | undefined } & mapboxgl.FilterOptions)
+      | undefined
+  ) {
+    return this.map.querySourceFeatures(id, parameters);
+  }
+
   setCursor(cursor: string) {
     this.map.getCanvas().style.cursor = cursor;
   }

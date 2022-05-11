@@ -1582,6 +1582,34 @@
   dependencies:
     tslib "^1.9.0"
 
+"@ngrx/component-store@^13.2.0":
+  version "13.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-13.2.0.tgz#1fbff82088409fa0a2b22e13e8d8638da2b7e879"
+  integrity sha512-+g4AVI59rrQewPUDmpnMQORlm1odUkfcdWmRdB8NuArPnMbU32Qd8/ROsxB2hWCw4bzLOHXWl9TR43864DuhhQ==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/component@^13.2.0":
+  version "13.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/component/-/component-13.2.0.tgz#760b1411bed6897b5c27cd55ae1414e60ca55bb2"
+  integrity sha512-TOGFMpNs9fG2HAooNvQc4BKsLSkYNnP/+ivIkkxcNunifoY5ZnZC+e+8qOKqeba2gsMxXeqban0ioE9voTbWow==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/entity@^13.2.0":
+  version "13.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-13.2.0.tgz#de90258a49ad1482ecd61262cba7c9b8097b5919"
+  integrity sha512-2zgz2/3BpYSvVNLqQM034lK3kQ0UoHj7kxmtf5Bkf2yWrjEGVmwyRUYDt1/vlfoBUE/KU7DDPHWJT8r5Li0ALA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store@^13.2.0":
+  version "13.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-13.2.0.tgz#43d4e9bf064808dd546ef1edbbcd08c2a8e0871a"
+  integrity sha512-3wlGMkfe0EXsiS6E6W0wCksuGapa5Z6JVFvKQMHFpXZ3XeixXKlULnemlcdMT7Yrnry+CGOtRHqkmKxLoQzhTw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@13.3.5":
   version "13.3.5"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-13.3.5.tgz#bb7dde18fb30919c49c4a25635b94381d19b7622"
@@ -2040,6 +2068,26 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
+
+"@turf/bbox@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-6.5.0.tgz#bec30a744019eae420dac9ea46fb75caa44d8dc5"
+  integrity sha512-RBbLaao5hXTYyyg577iuMtDB8ehxMlUqHEJiMs8jT1GHkFhr6sYre3lmLsPeYEi/ZKj5TP5tt7fkzNdJ4GIVyw==
+  dependencies:
+    "@turf/helpers" "^6.5.0"
+    "@turf/meta" "^6.5.0"
+
+"@turf/helpers@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-6.5.0.tgz#f79af094bd6b8ce7ed2bd3e089a8493ee6cae82e"
+  integrity sha512-VbI1dV5bLFzohYYdgqwikdMVpe7pJ9X3E+dlr425wa2/sMJqYDhTO++ec38/pcPvPE6oD9WEEeU3Xu3gza+VPw==
+
+"@turf/meta@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@turf/meta/-/meta-6.5.0.tgz#b725c3653c9f432133eaa04d3421f7e51e0418ca"
+  integrity sha512-RrArvtsV0vdsCBegoBtOalgdSOfkBrTJ07VkpiCnq/491W67hnMWmDu7e6Ztw0C3WldRYTXkg3SumfdzZxLBHA==
+  dependencies:
+    "@turf/helpers" "^6.5.0"
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14":
   version "7.1.19"

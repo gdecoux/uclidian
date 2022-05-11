@@ -1,18 +1,9 @@
 import { Injectable } from '@angular/core';
 import { from, map } from 'rxjs';
-import { directus, Layer, Map } from './directus';
+import { directus, Map } from './directus';
 
 const LAYERS_FIELDS = ['id', 'name', 'cluster', 'clusterMaxZoom', 'clusterRadius', 'file', 'style'];
 const MAPS_FIELDS = ['id', 'title', 'slug', 'style', 'center', 'zoom', 'defaultLayers'];
-
-type MapItemBase = Omit<Map, 'layers'>;
-type LayerItemBase = Layer;
-
-export type LayerItem = LayerItemBase;
-
-export interface MapItem extends MapItemBase {
-  layers: LayerItem[];
-}
 
 @Injectable({ providedIn: 'root' })
 export class MapsService {
@@ -25,17 +16,9 @@ export class MapsService {
     ).pipe(
       map((items) => {
         const data = items.data || [];
-        const item = data[0] as Map;
-        return this.toMapItem(item);
+        return data[0] as Map;
       })
     );
-  }
-
-  private toMapItem({ layers, ...rest }: Map): MapItem {
-    return {
-      ...rest,
-      layers: layers.map(({ layer }) => layer),
-    };
   }
 }
 
