@@ -32,6 +32,7 @@ import {
   MapLayerEventType,
   PointLike,
   Style,
+  TerrainSpecification,
 } from 'mapbox-gl';
 import {
   AsyncSubject,
@@ -90,6 +91,7 @@ export class MglMap implements OnInit, OnChanges, OnDestroy {
   @Input() bearing: number;
   @Input() pitch: number;
   @Input() zoom: number;
+  @Input() terrain: TerrainSpecification;
 
   @Output() mapClick = this.mapEvent('click');
   @Output() mapMouseMove = this.mapEvent('mousemove');
@@ -227,6 +229,12 @@ export class MglMap implements OnInit, OnChanges, OnDestroy {
   setPaintProperty(id: string, name: string, value: any, klass?: string | undefined) {
     return this.zone.runOutsideAngular(() => {
       return this.map.setPaintProperty(id, name, value, klass);
+    });
+  }
+
+  setTerrain(terrain: TerrainSpecification | null | undefined) {
+    return this.zone.run(() => {
+      return this.map.setTerrain(terrain);
     });
   }
 

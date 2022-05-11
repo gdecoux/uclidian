@@ -27,11 +27,10 @@ const { selectAll } = adapter.getSelectors();
 export class MapStore extends ComponentStore<MapState> {
   layers$ = this.select(selectAll);
   defaultLayers$ = this.select((state) => state.defaultLayers);
-  mapState$ = this.select(({ center, zoom, style, defaultLayers }) => ({
+  mapState$ = this.select(({ center, zoom, style }) => ({
     center,
     zoom,
     style,
-    defaultLayers,
   }));
 
   toggleLayer = this.updater((state, id: string) =>

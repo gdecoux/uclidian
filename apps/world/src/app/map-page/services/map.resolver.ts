@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class MapResolver implements Resolve<Map> {
   constructor(private mapsService: MapsService) {}
+
   resolve(route: ActivatedRouteSnapshot): Observable<Map> {
     return this.mapsService.getMapItem(route.params['slug']);
   }

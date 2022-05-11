@@ -14,7 +14,7 @@ import { MapLayer } from '../services';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayersComponent {
-  @Input() layers?: MapLayer[];
+  @Input() layers: MapLayer[];
 
   trackByLayer(_: number, layer: MapLayer) {
     return layer.id;

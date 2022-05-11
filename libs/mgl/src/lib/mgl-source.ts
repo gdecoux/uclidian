@@ -20,13 +20,13 @@ export class MglSource<T extends AnySourceImpl = AnySourceImpl> implements OnIni
 
   @Input() id: string;
 
-  private destroy$ = new Subject<void>();
+  protected destroy$ = new Subject<void>();
 
   get source(): T {
     return this.mglMap.getSource(this.id) as T;
   }
 
-  constructor(private mglMap: MglMap, private zone: NgZone) {}
+  constructor(protected mglMap: MglMap, private zone: NgZone) {}
 
   ngOnInit() {
     this.mglMap.loaded$
@@ -51,11 +51,11 @@ export class MglSource<T extends AnySourceImpl = AnySourceImpl> implements OnIni
     return this.sourceData;
   }
 
-  private addSource() {
+  protected addSource() {
     this.mglMap.addSource(this.id, this.getSource());
   }
 
-  private removeSource() {
+  protected removeSource() {
     this.zone.runOutsideAngular(() => {
       // make sure source is removed after layers
       setTimeout(() => this.mglMap.removeSource(this.id), 0);

@@ -31,7 +31,15 @@ import { MapLayer, MapStore } from './services';
 
       <mat-drawer-content *ngrxLet="mapState$; let state">
         <mgl-map [style]="state.style" [center]="state.center" [zoom]="state.zoom">
-          <atrius-map-layers [layers]="layers$ | ngrxPush"></atrius-map-layers>
+          <atrius-map-layers
+            *ngIf="layers$ | ngrxPush as layers"
+            [layers]="layers"
+          ></atrius-map-layers>
+
+          <atrius-map-default-layers
+            *ngIf="defaultLayers$ | ngrxPush as defaultLayers"
+            [defaultLayers]="defaultLayers"
+          ></atrius-map-default-layers>
         </mgl-map>
       </mat-drawer-content>
     </mat-drawer-container>
@@ -45,6 +53,7 @@ export class MapPageComponent implements OnInit {
 
   mapState$ = this.store.mapState$;
   layers$ = this.store.layers$;
+  defaultLayers$ = this.store.defaultLayers$;
 
   constructor(private route: ActivatedRoute, private router: Router, private store: MapStore) {}
 

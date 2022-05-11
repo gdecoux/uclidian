@@ -5,8 +5,9 @@ import { MglMap } from './mgl-map';
 import { MglLayer } from './mgl-layer';
 import { MglSource } from './mgl-source';
 import { MglGeoJSONSource } from './mgl-geojson-source';
+import { MglRasterDemSource } from './mgl-raster-dem-source';
 
-const COMPONENTS = [MglMap, MglLayer, MglSource, MglGeoJSONSource];
+const COMPONENTS = [MglMap, MglLayer, MglSource, MglGeoJSONSource, MglRasterDemSource];
 
 @NgModule({
   declarations: COMPONENTS,
