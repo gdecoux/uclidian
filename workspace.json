@@ -4,5 +4,6 @@
     "mgl": "libs/mgl",
     "ui": "libs/ui",
     "world": "apps/world"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
