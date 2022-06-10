@@ -4,7 +4,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { LngLatBoundsLike, PaddingOptions } from 'mapbox-gl';
 import { MglMap } from '@atrius/mgl';
 import bbox from '@turf/bbox';
-import { MapLayer, MapStore } from './services';
+import { MapStore } from './services';
 
 @Component({
   selector: 'atrius-map-page',
@@ -60,16 +60,11 @@ export class MapPageComponent implements OnInit {
   ngOnInit() {
     const map = this.route.snapshot.data['map'];
 
-    if (!map) {
-      this.router.navigateByUrl('/', { skipLocationChange: true });
-      return;
+    if (map) {
+      this.store.setMap(map);
+    } else {
+      this.router.navigateByUrl('/404', { skipLocationChange: true });
     }
-
-    this.store.setMap(map);
-  }
-
-  trackByLayer(i: number, layer: MapLayer) {
-    return layer.id;
   }
 
   onLayerToggle(id: string) {
