@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/viewer/src",
+  "prefix": "atrius",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/viewer",
+        "index": "apps/viewer/src/index.html",
+        "main": "apps/viewer/src/main.ts",
+        "polyfills": "apps/viewer/src/polyfills.ts",
+        "tsConfig": "apps/viewer/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/viewer/src/favicon.ico", "apps/viewer/src/assets"],
+        "styles": ["apps/viewer/src/styles.scss"],
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs"]
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/viewer/src/environments/environment.ts",
+              "with": "apps/viewer/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "viewer:build:production"
+        },
+        "development": {
+          "browserTarget": "viewer:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "viewer:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/viewer/**/*.ts", "apps/viewer/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
